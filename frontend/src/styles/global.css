@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+  --vigile-bg: #ffffff;
+  --vigile-text: #1a1a1a;
+  --vigile-border: #e5e7eb;
+  --vigile-accent: #6366f1;
+  --vigile-accent-hover: #4f46e5;
+  --vigile-overlay: rgba(0, 0, 0, 0.5);
+  --vigile-panel-bg: #f9fafb;
+  --vigile-header-h: 48px;
+  --vigile-panel-w: 280px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: var(--vigile-text);
+  background: var(--vigile-bg);
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.vigile-empty-placeholder {
+  color: #9ca3af;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 8px;
+  user-select: none;
+  pointer-events: none;
+}
+
+[data-empty="true"] {
+  outline: 2px dashed #d1d5db;
+  outline-offset: -2px;
+  min-height: 32px;
+}
