@@ -5,6 +5,14 @@ cd /d "%~dp0"
 echo Starting Vigile CMS...
 echo.
 
+:: Install frontend deps if missing
+if not exist "%~dp0frontend\node_modules" (
+    echo [Frontend] Installing dependencies first...
+    cd /d "%~dp0frontend"
+    call npm install
+    cd /d "%~dp0"
+)
+
 :: Start backend
 echo [Backend] Starting on http://localhost:5000
 start "Vigile Backend" cmd /k "cd /d "%~dp0backend" & dotnet run"
